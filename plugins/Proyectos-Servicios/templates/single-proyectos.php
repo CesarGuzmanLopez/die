@@ -6,11 +6,10 @@
 get_header();
 
 // Obtener los campos personalizados
-$ubicacion = get_post_meta(get_the_ID(), 'ubicacion_servicio', true);
-$descripcion = get_post_meta(get_the_ID(), 'descripcion_servicio', true);
-$habilidades = get_post_meta(get_the_ID(), 'habilidades_servicio', true);
-$imagen = get_post_meta(get_the_ID(), 'imagen_servicio', true);
-$contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
+$descripcion = get_post_meta(get_the_ID(), 'descripcion_proyecto', true);
+$habilidades = get_post_meta(get_the_ID(), 'habilidades_proyecto', true);
+$contacto = get_post_meta(get_the_ID(), 'datos_contacto_proyecto', true);
+$imagen = get_post_meta(get_the_ID(), 'imagen_proyecto', true);
 ?>
 
 
@@ -21,7 +20,7 @@ $contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
         ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
-                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
             </header>
             <div class="entry-content">
                 <div class="c-meta">
@@ -44,15 +43,9 @@ $contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
                         <?php if ($habilidades) : ?>
                             <div class="c-meta-item">
                                 <strong>Habilidades requeridas:</strong>
-                                <?php echo esc_html($habilidades); ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($ubicacion) : ?>
-                            <div class="c-meta-item">
-                                <strong>Ubicación:</strong>
                                 <div class="content-item">
 
-                                <?php echo esc_html($ubicacion); ?>
+                                <?php echo esc_html($habilidades); ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -60,8 +53,7 @@ $contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
                             <div class="c-meta-item">
                                 <strong>Datos de Contacto:</strong>
                                 <div class="content-item">
-
-                                <?php echo esc_html($contacto); ?>
+                                    <?php echo esc_html($contacto); ?>
                                 </div>
                             </div>
                         <?php endif; ?>

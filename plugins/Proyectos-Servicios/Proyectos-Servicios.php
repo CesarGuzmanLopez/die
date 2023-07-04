@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 // Registrar el tipo de entrada personalizado "Proyectos"
 function wporg_custom_post_type() {
-    register_post_type('Proyectos',
+    register_post_type('proyectos',
         array(
             'labels'      => array(
                 'name'          => __('Proyectos Terminales', 'textdomain'),
@@ -33,7 +33,7 @@ function wporg_custom_post_type() {
     );
 
     // Registrar el tipo de entrada personalizado "Servicios"
-    register_post_type('Servicios',
+    register_post_type('servicios',
         array(
             'labels'      => array(
                 'name'          => __('Servicios Sociales', 'textdomain'),
@@ -127,7 +127,6 @@ add_action('add_meta_boxes', 'agregar_meta_box_descripcion_proyecto');
 function mostrar_campo_descripcion_proyecto($post) {
     // Obtener el valor de la descripción guardada
     $descripcion_proyecto = get_post_meta($post->ID, 'descripcion_proyecto', true);
-
     // Mostrar el campo de descripción
     ?>
     <textarea id="descripcion_proyecto" style="min-width: 500px;" name="descripcion_proyecto"><?php echo esc_textarea($descripcion_proyecto); ?></textarea>
@@ -146,7 +145,7 @@ add_action('save_post_proyectos', 'guardar_descripcion_proyecto');
 // Agregar una meta box personalizada con un campo de habilidades en el tipo de entrada personalizado "Proyectos"
 function agregar_meta_box_habilidades() {
     add_meta_box(
-        'habilidades_meta_box',
+        'habilidades_proyecto_meta_box',
         'Habilidades para el Proyecto',
         'mostrar_campo_habilidades',
         'proyectos',
@@ -159,22 +158,57 @@ add_action('add_meta_boxes', 'agregar_meta_box_habilidades');
 // Mostrar el campo de habilidades en la meta box
 function mostrar_campo_habilidades($post) {
     // Obtener el valor de las habilidades guardadas
-    $habilidades = get_post_meta($post->ID, 'habilidades', true);
+    $habilidades_proyecto = get_post_meta($post->ID, 'habilidades_proyecto', true);
 
     // Mostrar el campo de habilidades
     ?>
-    <textarea id="habilidades" style="min-width: 500px;" name="habilidades"><?php echo esc_textarea($habilidades); ?></textarea>
+    <textarea id="habilidades_proyecto" style="min-width: 500px;" name="habilidades_proyecto"><?php echo esc_textarea($habilidades_proyecto); ?></textarea>
     <?php
 }
 
-// Guardar el valor de las habilidades cuando se guarda el post
-function guardar_habilidades($post_id) {
-    if (isset($_POST['habilidades'])) {
-        $habilidades = sanitize_textarea_field($_POST['habilidades']);
-        update_post_meta($post_id, 'habilidades', $habilidades);
+// Guardar el valor de las habilidades_proyecto cuando se guarda el post
+function guardar_habilidades_proyecto($post_id) {
+    if (isset($_POST['habilidades_proyecto'])) {
+        $habilidades_proyecto = sanitize_textarea_field($_POST['habilidades_proyecto']);
+        update_post_meta($post_id, 'habilidades_proyecto', $habilidades_proyecto);
     }
 }
-add_action('save_post_proyectos', 'guardar_habilidades');
+add_action('save_post_proyectos', 'guardar_habilidades_proyecto');
+
+add_action('add_meta_boxes', 'agregar_meta_box_datos_contacto_proyecto');
+
+// Agregar una meta box personalizada con un campo de Datos de contacto en el tipo de entrada personalizado "Proyectos"
+function agregar_meta_box_datos_contacto_proyecto() {
+    add_meta_box(
+        'datos_contacto_proyecto_meta_box',
+        'Datos de Contacto',
+        'mostrar_campo_datos_contacto_proyecto',
+        'proyectos',
+        'normal',
+        'high'
+    );
+}
+
+// Mostrar el campo de datos de contacto en la meta box
+function mostrar_campo_datos_contacto_proyecto($post) {
+    // Obtener el valor de los datos de contacto guardados
+    $datos_contacto_proyecto = get_post_meta($post->ID, 'datos_contacto_proyecto', true);
+
+    // Mostrar el campo de datos de contacto
+    ?>
+    <textarea id="datos_contacto_proyecto" style="min-width: 500px;" name="datos_contacto_proyecto"><?php echo esc_textarea($datos_contacto_proyecto); ?></textarea>
+    <?php
+}
+
+//guardar el valor de los datos de contacto cuando se guarda el post
+function guardar_datos_contacto_proyecto($post_id) {
+    if (isset($_POST['datos_contacto_proyecto'])) {
+        $datos_contacto_proyecto = sanitize_textarea_field($_POST['datos_contacto_proyecto']);
+        update_post_meta($post_id, 'datos_contacto_proyecto', $datos_contacto_proyecto);
+    }
+}
+add_action('save_post_proyectos', 'guardar_datos_contacto_proyecto');
+
 
 // Agregar una meta box personalizada con un campo de imagen en el tipo de entrada personalizado "Proyectos"
 function agregar_meta_box_imagen_proyecto() {
@@ -233,6 +267,11 @@ function cargar_biblioteca_medios() {
     wp_enqueue_media();
 }
 add_action('admin_enqueue_scripts', 'cargar_biblioteca_medios');
+
+
+
+
+
 
 
 // Agregar una meta box personalizada con un campo de fecha en el tipo de entrada personalizado "Servicios"
@@ -321,6 +360,10 @@ function agregar_meta_box_habilidades_servicio() {
 }
 add_action('add_meta_boxes', 'agregar_meta_box_habilidades_servicio');
 
+
+
+
+
 // Mostrar el campo de habilidades en la meta box
 function mostrar_campo_habilidades_servicio($post) {
     // Obtener el valor de las habilidades guardadas
@@ -340,6 +383,42 @@ function guardar_habilidades_servicio($post_id) {
     }
 }
 add_action('save_post_servicios', 'guardar_habilidades_servicio');
+
+
+add_action('add_meta_boxes', 'agregar_meta_box_datos_contacto_Servicio');
+
+function agregar_meta_box_datos_contacto_Servicio() {
+    add_meta_box(
+        'datos_contacto_Servicio_meta_box',
+        'Datos de contacto',
+        'mostrar_campo_datos_contacto_Servicio',
+        'servicios',
+        'normal',
+        'high'
+    );
+}
+
+// Mostrar el campo de datos de contacto en la meta box
+
+function mostrar_campo_datos_contacto_Servicio($post) {
+    // Obtener el valor de los datos de contacto guardados
+    $datos_contacto_Servicio = get_post_meta($post->ID, 'datos_contacto_Servicio', true);
+
+    // Mostrar el campo de datos de contacto
+    ?>
+    <textarea id="datos_contacto_Servicio" style="min-width: 500px;" name="datos_contacto_Servicio"><?php echo esc_textarea($datos_contacto_Servicio); ?></textarea>
+    <?php
+}
+
+// Guardar el valor de los datos de contacto cuando se guarda el post
+
+function guardar_datos_contacto_Servicio($post_id) {
+    if (isset($_POST['datos_contacto_Servicio'])) {
+        $datos_contacto_Servicio = sanitize_textarea_field($_POST['datos_contacto_Servicio']);
+        update_post_meta($post_id, 'datos_contacto_Servicio', $datos_contacto_Servicio);
+    }
+}
+add_action('save_post_servicios', 'guardar_datos_contacto_Servicio');
 
 // Agregar una meta box personalizada con un campo de imagen en el tipo de entrada personalizado "Servicios"
 function agregar_meta_box_imagen_servicio() {
@@ -425,5 +504,35 @@ function guardar_ubicacion_servicio($post_id) {
     }
 }
 add_action('save_post_servicios', 'guardar_ubicacion_servicio');
+add_filter('single_template', 'asignar_plantilla_a_servicios');
 
 
+function asignar_plantilla_a_servicios($single_template) {
+    if (is_singular('servicios')) {
+        $single_template =   dirname( __FILE__ ) . '/templates/single-servicios.php';
+    }
+    return $single_template;
+}
+
+add_filter('single_template', 'asignar_plantilla_a_proyectos');
+function asignar_plantilla_a_proyectos($single_template) {
+    if (is_singular('proyectos')) {
+        $single_template =   dirname( __FILE__ ) . '/templates/single-proyectos.php';
+    }
+    return $single_template;
+}
+
+function agregar_css_encabezado() {
+    if (is_singular('proyectos') || is_singular('servicios')) {
+
+    echo
+    "<style type='text/css'>
+    ".
+    file_get_contents(dirname( __FILE__ ) . '/templates/style.css').
+    "
+    </style>
+    ";
+    }
+
+}
+add_action( 'wp_head', 'agregar_css_encabezado' );
