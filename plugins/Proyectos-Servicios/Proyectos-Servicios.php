@@ -50,42 +50,13 @@ function wporg_custom_post_type() {
 add_action('init', 'wporg_custom_post_type');
 
 function wporg_custom_role() {
-    // Crear la categoría "Profesor"
-    $cat_name = 'profesor';
-    $cat_slug = 'profesor';
-    $cat_args = array(
-        'description' => 'Son los maestros que pueden agregar y editar',
-        'slug'        => $cat_slug,
-        'parent'      => 0,
-    );
-    $category = wp_insert_term($cat_name, 'category', $cat_args);
-
+    
     // Agregar un nuevo rol de usuario "profesor" con capacidades personalizadas
     add_role('profesor', 'profesor', array(
-        'read'                   => true,
-        'edit_proyectos'         => true,
-        'edit_servicios'         => true,
-        'edit_posts'             => true,
-        'publish_posts'          => true,
-        'edit_published_posts'   => true,
-        'upload_files'           => true,
-        'delete_published_posts' => true,
-        
+        'edit_proyectos'         => false,
+        'edit_servicios'         => false,
     )); 
-    $role = get_role('profesor');               
-    $role->add_cap( 'edit_servicios' );
-    $role->add_cap( 'publish_servicios' );
-    $role->add_cap( 'read_servicios' );
-    $role->add_cap( 'delete_servicios' );
-    $role->add_cap( 'edit_proyectos');
-    $role->add_cap( 'publish_proyectos' );
-    $role->add_cap( 'read_proyectos' );
-    $role->add_cap( 'delete_proyectos' );
-    $role->add_cap( 'upload_files' );
-    $role->add_cap( 'edit_published_proyectos' );
-    $role->add_cap( 'edit_published_servicios' );
-    $role->add_cap( 'delete_published_proyectos' );
-    $role->add_cap( 'delete_published_servicios' );
+
 }
 add_action('init', 'wporg_custom_role');
 
