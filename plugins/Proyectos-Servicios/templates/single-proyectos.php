@@ -64,9 +64,11 @@ $imagen = get_post_meta(get_the_ID(), 'imagen_proyecto', true);
     <?php endwhile; ?>
 
     <div class="author-section">
-  
+        <div class="author-image">
+            <?php echo get_avatar(get_the_author_meta('ID'), 64); ?>
+        </div>
         <div class="author-info">
-            <p>Profesor: <a href="<?php echo the_author_meta('url',get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
+            <p>Profesor: <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
         </div>
     </div>
 </main>
