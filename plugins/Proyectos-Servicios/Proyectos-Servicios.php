@@ -27,9 +27,13 @@ function wporg_custom_post_type() {
             'supports'    => array('title'),
             'show_in_rest' => true,
             'show_in_menu' => true,
+            'hierarchical'      => true,
+            'menu_icon'         => 'dashicons-groups',
+            'map_meta_cap'      => true,
+            'taxonomies'        => array( 'member-type' ),
+            'menu_position'     => 3,
         )
     );
-
     // Registrar el tipo de entrada personalizado "Servicios"
     register_post_type('servicios',
         array(
@@ -37,26 +41,33 @@ function wporg_custom_post_type() {
                 'name'          => __('Servicios Sociales', 'textdomain'),
                 'singular_name' => __('Servicio Social', 'textdomain'),
             ),
+            'rewrite'     => array('slug' => 'servicios-sociales'), // Mi slug personalizado
+
             'public'      => true,
             'has_archive' => true,
-            'rewrite'     => array('slug' => 'servicios-sociales'), // Mi slug personalizado
             'supports'    => array('title'),
             'show_in_rest' => true,
             'show_in_menu' => true,
+            'hierarchical'      => true,
+            'menu_icon'         => 'dashicons-groups',
+            'map_meta_cap'      => true,
+            'taxonomies'        => array( 'member-type' ),
+            'menu_position'     => 3,
         )
     );
+    
 
 }
 add_action('init', 'wporg_custom_post_type');
 
 function wporg_custom_role() {
-    
-    // Agregar un nuevo rol de usuario "profesor" con capacidades personalizadas
-    add_role('profesor', 'profesor', array(
-        'edit_proyectos'         => false,
-        'edit_servicios'         => false,
-    )); 
+    //Agregar un nuevo rol de usuario "profesor" con capacidades personalizadas
+    add_role( 'Profesor_1', 'profesor_1', get_role( 'author' )->capabilities );
+    $role = get_role( 'profesor_1' );
 
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    //$role->add_cap( 'edit_others_posts' ); 
 }
 add_action('init', 'wporg_custom_role');
 
