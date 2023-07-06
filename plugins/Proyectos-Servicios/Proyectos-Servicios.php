@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Proyectos-Servicios
-Description: Este plugiin sirve para crear usuarios y postypes del tipo  
+Description: Este plugiin sirve para crear usuarios y Asi como los post de proyectos y servicios
 Version: 0.1
 Requires at least: 5.0
 Author: Cesar Gerardo Guzman Lopez
@@ -11,11 +11,7 @@ License URI: https://wikipedia.org/wiki/Public_domain
 Text Domain: 
 */
 
-// Bloquear el acceso directo a este archivo
-if (!defined('ABSPATH')) {
-    http_response_code(404);
-    die();
-}
+
 
 // Registrar el tipo de entrada personalizado "Proyectos"
 function wporg_custom_post_type() {
@@ -29,6 +25,8 @@ function wporg_custom_post_type() {
             'has_archive' => true,
             'rewrite'     => array('slug' => 'proyectos-terminales'), // Mi slug personalizado
             'supports'    => array('title'),
+            'show_in_rest' => true,
+            'show_in_menu' => true,
         )
     );
 
@@ -43,9 +41,15 @@ function wporg_custom_post_type() {
             'has_archive' => true,
             'rewrite'     => array('slug' => 'servicios-sociales'), // Mi slug personalizado
             'supports'    => array('title'),
+            'show_in_rest' => true,
+            'show_in_menu' => true,
         )
     );
 
+}
+add_action('init', 'wporg_custom_post_type');
+
+function wporg_custom_role() {
     // Crear la categoría "Profesor"
     $cat_name = 'profesor';
     $cat_slug = 'profesor';
@@ -56,19 +60,35 @@ function wporg_custom_post_type() {
     );
     $category = wp_insert_term($cat_name, 'category', $cat_args);
 
-    // Agregar un nuevo rol de usuario "Profesor" con capacidades personalizadas
-    add_role('profesor', 'Profesor', array(
+    // Agregar un nuevo rol de usuario "profesor" con capacidades personalizadas
+    add_role('profesor', 'profesor', array(
         'read'                   => true,
         'edit_proyectos'         => true,
         'edit_servicios'         => true,
-        'edit_posts'             => false,
-        'publish_posts'          => false,
-        'edit_published_posts'   => false,
+        'edit_posts'             => true,
+        'publish_posts'          => true,
+        'edit_published_posts'   => true,
         'upload_files'           => true,
-        'delete_published_posts' => false,
-    ));
+        'delete_published_posts' => true,
+        
+    )); 
+    $role = get_role('profesor');               
+    $role->add_cap( 'edit_servicios' );
+    $role->add_cap( 'publish_servicios' );
+    $role->add_cap( 'read_servicios' );
+    $role->add_cap( 'delete_servicios' );
+    $role->add_cap( 'edit_proyectos');
+    $role->add_cap( 'publish_proyectos' );
+    $role->add_cap( 'read_proyectos' );
+    $role->add_cap( 'delete_proyectos' );
+    $role->add_cap( 'upload_files' );
+    $role->add_cap( 'edit_published_proyectos' );
+    $role->add_cap( 'edit_published_servicios' );
+    $role->add_cap( 'delete_published_proyectos' );
+    $role->add_cap( 'delete_published_servicios' );
 }
-add_action('init', 'wporg_custom_post_type');
+add_action('init', 'wporg_custom_role');
+
 
 // Agregar una meta box personalizada con un campo de fecha en el tipo de entrada personalizado "Proyectos"
 function agregar_meta_box_fecha_proyecto() {

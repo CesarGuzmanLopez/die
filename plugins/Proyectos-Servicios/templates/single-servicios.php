@@ -44,7 +44,9 @@ $contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
                         <?php if ($habilidades) : ?>
                             <div class="c-meta-item">
                                 <strong>Habilidades requeridas:</strong>
-                                <?php echo esc_html($habilidades); ?>
+                                <div class="content-item">
+                                    <?php echo esc_html($habilidades); ?>
+                                </div>
                             </div>
                         <?php endif; ?>
                         <?php if ($ubicacion) : ?>
