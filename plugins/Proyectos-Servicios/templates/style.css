@@ -38,6 +38,7 @@
 .content-item {
     margin-top: 5px;
     margin-left: 2em;
+    white-space: pre-wrap;
 }
 
 /* Estilos de la sección del autor */

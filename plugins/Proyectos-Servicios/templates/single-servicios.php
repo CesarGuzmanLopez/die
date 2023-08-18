@@ -52,19 +52,13 @@ $contacto = get_post_meta(get_the_ID(), 'datos_contacto_Servicio', true);
                         <?php if ($ubicacion) : ?>
                             <div class="c-meta-item">
                                 <strong>Ubicación:</strong>
-                                <div class="content-item">
-
-                                <?php echo esc_html($ubicacion); ?>
-                                </div>
+                                <div class="content-item"><?php echo esc_html($ubicacion); ?></div>
                             </div>
                         <?php endif; ?>
                         <?php if ($contacto) : ?>
                             <div class="c-meta-item">
                                 <strong>Datos de Contacto:</strong>
-                                <div class="content-item">
-
-                                <?php echo esc_html($contacto); ?>
-                                </div>
+                                <div class="content-item"><?php echo esc_html($contacto); ?></div>
                             </div>
                         <?php endif; ?>
                     </div>

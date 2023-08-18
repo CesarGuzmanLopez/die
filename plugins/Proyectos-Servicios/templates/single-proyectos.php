@@ -29,32 +29,22 @@ $imagen = get_post_meta(get_the_ID(), 'imagen_proyecto', true);
                             <img src="<?php echo esc_url($imagen); ?>" alt="" class="c-imagen">
                         </div>
                     <?php endif; ?>
-
                     <div class="c-contenido">
                         <?php if ($descripcion) : ?>
                             <div class="c-meta-item">
                                 <strong>Descripción:</strong>
-                                <div class="content-item">
-                                    <?php echo esc_html($descripcion); ?>
-                                </div>
+                                <div class="content-item"><?php echo $descripcion; ?></div>
                             </div>
                         <?php endif; ?>
-
                         <?php if ($habilidades) : ?>
-                            <div class="c-meta-item">
-                                <strong>Habilidades requeridas:</strong>
-                                <div class="content-item">
-
-                                <?php echo esc_html($habilidades); ?>
-                                </div>
+                            <div class="c-meta-item"><strong>Habilidades requeridas:</strong>
+                                <div class="content-item"><?php echo esc_html($habilidades); ?></div>
                             </div>
                         <?php endif; ?>
                         <?php if ($contacto) : ?>
                             <div class="c-meta-item">
                                 <strong>Datos de Contacto:</strong>
-                                <div class="content-item">
-                                    <?php echo esc_html($contacto); ?>
-                                </div>
+                                <div class="content-item"> <?php echo esc_html($contacto); ?></div>
                             </div>
                         <?php endif; ?>
                     </div>
