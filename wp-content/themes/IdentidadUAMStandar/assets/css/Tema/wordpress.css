@@ -1,0 +1,95 @@
+.wp-caption .alignleft,
+.wp-caption .alignright {
+  margin-bottom: 0;
+}
+
+  
+
+  /* Bloque de Verso */
+
+  /* Alineación de Texto */
+.alignleft {
+    float: left;
+    margin-right: 20px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 20px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.alignjustify {
+    text-align: justify;
+}
+
+/* Imágenes */
+.size-full,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botones */
+.button,
+.button-primary,
+.button-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-primary {
+    background-color: #ff9900;
+}
+
+/* Listas */
+.ul,
+.ol {
+    margin: 0;
+    padding: 0;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+/* Comentarios */
+.commentlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+/* Sidebar */
+.widget {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.widget-title,  .block-editor__container {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

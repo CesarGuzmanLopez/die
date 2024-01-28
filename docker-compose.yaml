@@ -1,0 +1,55 @@
+version: "3"
+networks:
+    PT-wordpress-net:
+        driver: bridge
+
+services:
+    mysql:
+        image: mysql:latest
+        restart: always
+        container_name: PT-wordpress-mysql
+        tty: true
+        ports:
+            - "4208:3306"
+        volumes:
+            - ~/.DockerTemp/mysql/:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: jorge
+            MYSQL_PASSWORD: 123456
+        networks:
+            - PT-wordpress-net
+
+    server:
+        image: wordpress:latest
+        restart: always
+        container_name: PT-wordpress
+        ports:
+            - "4282:80"
+        volumes:
+            - "./wp-content:/var/www/html/wp-content" # Solo montamos wp-content
+        environment:
+            WORDPRESS_DB_USER: jorge
+            WORDPRESS_DB_PASSWORD: 123456
+            WORDPRESS_DB_NAME: wordpress
+            WORDPRESS_DB_HOST: PT-wordpress-mysql
+            WORDPRESS_DEBUG: true
+        depends_on:
+            - mysql
+        networks:
+            - PT-wordpress-net
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        container_name: PT-phpmyadmin
+        ports:
+            - "4283:80"
+        environment:
+            PMA_HOST: PT-wordpress-mysql
+            MYSQL_ROOT_PASSWORD: 123456
+        depends_on:
+            - mysql
+        networks:
+            - PT-wordpress-net

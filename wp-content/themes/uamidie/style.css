@@ -1,0 +1,41 @@
+/*
+Theme Name: UAMI-DIE
+Template:  twentytwentyfour
+Theme URI: https://die.izt.uam.mx
+Author: Departamento de Ingeniería Eléctrica
+Author URI: https://die.izt.uam.mx
+Description: plantilla para el departamento de ingeniería eléctrica de la UAM-I
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 7.0
+Version: 1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfour
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+/* Input styles */
+.wp-block-search .wp-block-search__input {
+  border: 1px solid rgb(231, 231, 231);
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  border-radius: 0px !important;
+  place-content: center;
+  padding: 1px 0px 1px 0px;
+}
+/* agrego icono de buscar en el placeholder .wp-block-search__input */
+
+.wp-block-search .wp-block-search__input::placeholder {
+  color: rgb(182, 182, 182);
+  background-color: #000000;
+  border-radius: 0px !important;
+  place-content: center;
+  padding: 0px 0px 0px 0px;
+  background-image: url("./assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  padding-left: 20px;
+  /*cambio  el contenido por buscar*/
+  content: "<span>S</span>Buscar";
+}

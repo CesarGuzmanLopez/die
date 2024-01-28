@@ -1,0 +1,105 @@
+/* Estilo del contenedor principal del slider */
+.custom-slider {
+    position: relative;
+    overflow: hidden;
+    max-height: 100%; /* Altura máxima del slider */
+    /*degrado la imagen de fondo y le doy efecto blur*/
+
+    -webkit-box-shadow: 0px 17px 31px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 17px 31px -12px rgba(0,0,0,0.75);
+    box-shadow: 0px 17px 31px -12px rgba(0,0,0,0.75);
+    transition: background-image 0.5s ease; /* Agrega una transición de 0.5 segundos a background-image */ 
+}
+
+/* Estilo de las imágenes en el slider */
+.slider-image {
+    width: auto;
+    max-height: 100%;
+    height: 100%;
+    max-width: 100%; /* Asegura que la imagen no se distorsione */
+    display: block;
+    /* centro la imagen vartical y horizontalmente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Añado transición suave */
+    transition: opacity 0.3s ease;
+    /*borde redondeado semi transparente de 3 px*/
+    border-radius: 3px;
+
+}
+@media (max-width: 480px) {
+    .slider-image {
+        width: auto;
+        max-height: 100%;
+        height: 100%;
+        max-width: 100%; /* Asegura que la imagen no se distorsione */
+        display: block;
+        /* centro la imagen vartical y horizontalmente */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Añado transición suave */
+        transition: opacity 0.3s ease;
+        /*borde redondeado semi transparente de 3 px*/
+        border-radius: 3px;
+        min-width: fit-content;
+    }
+}
+
+
+
+/* Estilo de las flechas de navegación */
+.slider-navigation {
+    position: absolute;
+    
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    top:50%;
+}
+.prev-slide,
+.next-slide{
+    padding: 20px;
+}
+.prev-slide,
+.next-slide,
+.pause-slider {
+    color: var(--color-primario);; /* Color de texto */
+    font-size: 24px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    background-color: transparent;
+
+}
+
+.prev-slide:hover,
+.next-slide:hover,
+.pause-slider {
+    background-color: transparent;
+    color: #000; /* Color de texto más oscuro al pasar el ratón */
+}
+
+.prev-slide {
+    position: absolute;
+    left: 20px; /* Ajusta la posición izquierda según tus necesidades */
+}
+
+.next-slide {
+    position: absolute;
+    right: 20px; /* Ajusta la posición derecha según tus necesidades */
+}
+.pause-slider{
+    position:absolute;
+    right: 20px;
+    top: 20px;
+
+    text-decoration: underline;
+ 
+
+}

@@ -1,0 +1,54 @@
+/*
+Theme Name: IdentidadUAMStandar
+Theme URI: https://wordpress.org/themes/twentytwentytwo/
+Author: Jorge, Gabriel, Cesar
+Description: Tema para el DIE UAM
+Requires at least: 5.9
+Requires PHP: 5.6
+Version: 1.2.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 
+Tags: 
+*/
+:root {
+  --color-primario: #509f4a;
+  --color-secundario: #ff5733;
+  --color-terciario: #4287f5;
+  --color-advertencia: #e85d0f;
+  --color-error: #a154e8;
+  --color-exito: #0f4a8a;
+  --color-informativo: #0fc8e8;
+  --color-neutral: #777;
+  --color-fondo: #fff;
+  --color-fondo-2: #f1f1f1;
+  --color-texto: #111;
+
+  --color-fondo-secundario-resalta: #313131;
+  --color-texto-secundario-resalta: #fff;
+  accent-color: var(--color-primario);
+}
+:root {
+  --espaciado: 20px;
+  --padding-m: 15px;
+  --padding-l: 20px;
+  --padding-xl: 25px;
+  --margin-m: 15px;
+  --margin-l: 20px;
+  --margin-xl: 25px;
+}
+:root {
+  --fuente-base: Arial, Helvetica, sans-serif;
+  --fuente-titulo: 'Roboto', sans-serif;
+  --fuente-texto: 'Open Sans', sans-serif;
+  --fuente-monoespaciada: 'Courier New', monospace;
+  --fuente-iconos: 'FontAwesome', sans-serif;
+}
+:root {
+  --tamano-pantalla-lg: 1440px;
+  --tamano-pantalla-responsive: 680px;
+  --contenedor-normal: calc(var(--tamano-pantalla-lg) - 40px);
+  --contenedor-movil: calc(var(--tamano-pantalla-responsive) - 20px);
+  --degradado: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
+  --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

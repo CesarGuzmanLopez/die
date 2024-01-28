@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "10a9c1129e5d19d410c15bf1daca51db",
+    "packages": [
+        {
+            "name": "pixelalbatross/slider-block",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pixelalbatross/slider-block.git",
+                "reference": "9ecd6cea64b7ec8ef4c3dce42cc52e27a051200f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelalbatross/slider-block/zipball/9ecd6cea64b7ec8ef4c3dce42cc52e27a051200f",
+                "reference": "9ecd6cea64b7ec8ef4c3dce42cc52e27a051200f",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.3",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "pixelalbatross/coding-standards": "dev-main"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel Albatross",
+                    "homepage": "https://pixelalbatross.pt"
+                },
+                {
+                    "name": "Sérgio Santos",
+                    "homepage": "https://s3rgiosan.dev"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/pixelalbatross/slider-block/issues",
+                "source": "https://github.com/pixelalbatross/slider-block/tree/0.4.0"
+            },
+            "time": "2023-10-08T11:17:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

@@ -1,0 +1,229 @@
+.ctemawp-social-menu {
+	float: right;
+    position: relative;
+    z-index: 10;
+
+    &.simple-social {
+		right: -8px;
+	}
+
+	&.social-with-style {
+		right: -2px;
+	}
+
+    .social-menu-inner {
+    	@include display();
+		@include align-items( center );
+    	height: 74px;
+    }
+
+    ul {
+	    margin: 0;
+	    padding: 0;
+	    list-style: none;
+
+	    li {
+	    	float: left;
+    		position: relative;
+
+    		a {
+    			display: inline-block;
+			    background-color: transparent;
+			    color: $color-4;
+			    padding: 0 8px;
+			    line-height: 1;
+			    text-align: center;
+			    letter-spacing: 0;
+
+			    span {
+			    	width: 1em;
+   					height: 1em;
+			    	text-align: center;
+			    }
+
+			    &:hover {
+			    	background-color: transparent;
+			    }
+    		}
+
+    		&:first-child a {
+    			margin-left: 0;
+    		}
+
+    		&:last-child a {
+    			margin-right: 0;
+    		}
+
+		    &.ctemawp-twitter a:hover { color: #46d4fe; }
+		    &.ctemawp-facebook a:hover { color: #37589b; }
+		    &.ctemawp-googleplus a:hover { color: #de5a49; }
+		    &.ctemawp-pinterest a:hover { color: #cb2027; }
+		    &.ctemawp-dribbble a:hover { color: #ea4c89; }
+		    &.ctemawp-vk a:hover { color: #597BA5; }
+		    &.ctemawp-instagram a:hover { color: #3F729B; }
+		    &.ctemawp-linkedin a:hover { color: #3399CC; }
+		    &.ctemawp-tumblr a:hover { color: #2C4762; }
+		    &.ctemawp-github a:hover { color: #60b044; }
+		    &.ctemawp-flickr a:hover { color: #fa4086; }
+		    &.ctemawp-skype a:hover { color: #00AFF0; }
+		    &.ctemawp-youtube a:hover { color: #C4302B; }
+		    &.ctemawp-vimeo a:hover { color: #1ab7ea; }
+		    &.ctemawp-vine a:hover { color: #00bf8f; }
+		    &.ctemawp-xing a:hover { color: #006464; }
+		    &.ctemawp-yelp a:hover { color: #C41200; }
+		    &.ctemawp-tripadvisor a:hover { color: #589442; }
+		    &.ctemawp-rss a:hover { color: #ff7900; }
+		    &.ctemawp-email a:hover { color: #13aff0; }
+			&.ctemawp-tiktok a:hover { color: #000000 }
+			&.ctemawp-medium a:hover { color: #00ab6c; }
+			&.ctemawp-telegram a:hover { color: #0088cc }
+			&.ctemawp-twitch a:hover { color: #6441a5 }
+			&.ctemawp-line a:hover { color: #00c300 }
+			&.ctemawp-qq a:hover { color: #febf1b }
+	    }
+	}
+
+	.colored ul li {
+		a {
+	    	position: relative;
+		    display: inline-block;
+		    font-size: 12px;
+		    color: $color-1;
+		    line-height: 1;
+    		padding: 1em;
+		    @include border-radius( 50% );
+		    vertical-align: middle;
+		    @include transition( all .3s ease-out );
+
+		    &:hover {
+		    	color: $color-1;
+		    }
+
+			.owp-icon use {
+				stroke: $color-1;
+			}
+		}
+
+	    &.ctemawp-twitter a { background-color: #46d4fe; }
+	    &.ctemawp-twitter a:hover { background-color: #39b4d8; }
+	    &.ctemawp-facebook a{ background-color: #37589b; }
+	    &.ctemawp-facebook a:hover{ background-color: #2d477c; }
+	    &.ctemawp-googleplus a{ background-color: #de5a49; }
+	    &.ctemawp-googleplus a:hover { background-color: #bb4c3e; }
+	    &.ctemawp-pinterest a { background-color: #cb2027; }
+	    &.ctemawp-pinterest a:hover { background-color: #a91d23; }
+	    &.ctemawp-dribbble a { background-color: #ea4c89; }
+	    &.ctemawp-dribbble a:hover { background-color: #c64174; }
+	    &.ctemawp-vk a { background-color: #597BA5; }
+	    &.ctemawp-vk a:hover { background-color: #486384; }
+	    &.ctemawp-instagram a { background-color: #3F729B; }
+	    &.ctemawp-instagram a:hover { background-color: #315a7c; }
+	    &.ctemawp-linkedin a{ background-color: #3399CC; }
+	    &.ctemawp-linkedin a:hover { background-color: #2678a1; }
+	    &.ctemawp-tumblr a { background-color: #2C4762; }
+	    &.ctemawp-tumblr a:hover { background-color: #1d3042; }
+	    &.ctemawp-github a { background-color: #60b044; }
+	    &.ctemawp-github a:hover { background-color: #4f9237; }
+	    &.ctemawp-flickr a { background-color: #fa4086; }
+	    &.ctemawp-flickr a:hover { background-color: #c63169; }
+	    &.ctemawp-skype a { background-color: #00AFF0; }
+	    &.ctemawp-skype a:hover { background-color: #0291c6; }
+	    &.ctemawp-youtube a { background-color: #C4302B; }
+	    &.ctemawp-youtube a:hover { background-color: #982420; }
+	    &.ctemawp-vimeo a { background-color: #1ab7ea; }
+	    &.ctemawp-vimeo a:hover { background-color: #1494bd; }
+	    &.ctemawp-vine a { background-color: #00bf8f; }
+	    &.ctemawp-vine a:hover { background-color: #01906c; }
+	    &.ctemawp-xing a { background-color: #006464; }
+	    &.ctemawp-xing a:hover { background-color: #014646; }
+	    &.ctemawp-yelp a { background-color: #C41200; }
+	    &.ctemawp-yelp a:hover { background-color: #940f01; }
+	    &.ctemawp-tripadvisor a { background-color: #589442; }
+	    &.ctemawp-tripadvisor a:hover { background-color: #426f32; }
+	    &.ctemawp-rss a { background-color: #ff7900; }
+	    &.ctemawp-rss a:hover { background-color: #d46603; }
+	    &.ctemawp-email a { background-color: #13aff0; }
+	    &.ctemawp-email a:hover { background-color: #0f8dc2; }
+		&.ctemawp-tiktok a { background-color: #000000; }
+	    &.ctemawp-tiktok a:hover { background-color: #141414; }
+		&.ctemawp-medium a { background-color: #00ab6c; }
+	    &.ctemawp-medium a:hover { background-color: #03945f; }
+		&.ctemawp-telegram a { background-color: #0088cc; }
+	    &.ctemawp-telegram a:hover { background-color: #0da4f0; }
+		&.ctemawp-twitch a { background-color: #6441a5 }
+		&.ctemawp-twitch a:hover { background-color: #702cee }
+		&.ctemawp-line a { background-color: #00c300 }
+		&.ctemawp-line a:hover { background-color: #09f309 }
+		&.ctemawp-qq a { background-color: #febf1b }
+		&.ctemawp-qq a:hover { background-color: #db9f07 }
+	}
+
+	.minimal ul li {
+		a {
+	    	position: relative;
+		    display: inline-block;
+		    font-size: 12px;
+		    background-color: transparent;
+		    color: #bbb;
+		    border: 1px solid #ccc;
+		    line-height: 1;
+    		padding: 1em;
+		    @include border-radius( 50% );
+		    vertical-align: middle;
+		    @include transition( all .3s ease-out );
+
+		    &:hover {
+		    	background-color: transparent;
+		    }
+		}
+
+	    &.ctemawp-twitter a:hover { color: #46d4fe; border-color: #46d4fe; }
+	    &.ctemawp-facebook a:hover { color: #37589b; border-color: #37589b; }
+	    &.ctemawp-googleplus a:hover { color: #de5a49; border-color: #de5a49; }
+	    &.ctemawp-pinterest a:hover { color: #cb2027; border-color: #cb2027; }
+	    &.ctemawp-dribbble a:hover { color: #ea4c89; border-color: #ea4c89; }
+	    &.ctemawp-vk a:hover { color: #597BA5; border-color: #597BA5; }
+	    &.ctemawp-instagram a:hover { color: #3F729B; border-color: #3F729B; }
+	    &.ctemawp-linkedin a:hover { color: #3399CC; border-color: #3399CC; }
+	    &.ctemawp-tumblr a:hover { color: #2C4762; border-color: #2C4762; }
+	    &.ctemawp-github a:hover { color: #60b044; border-color: #60b044; }
+	    &.ctemawp-flickr a:hover { color: #fa4086; border-color: #fa4086; }
+	    &.ctemawp-skype a:hover { color: #00AFF0; border-color: #00AFF0; }
+	    &.ctemawp-youtube a:hover { color: #C4302B; border-color: #C4302B; }
+	    &.ctemawp-vimeo a:hover { color: #1ab7ea; border-color: #1ab7ea; }
+	    &.ctemawp-vine a:hover { color: #00bf8f; border-color: #00bf8f; }
+	    &.ctemawp-xing a:hover { color: #006464; border-color: #006464; }
+	    &.ctemawp-yelp a:hover { color: #C41200; border-color: #C41200; }
+	    &.ctemawp-tripadvisor a:hover { color: #589442; border-color: #589442; }
+	    &.ctemawp-rss a:hover { color: #ff7900; border-color: #ff7900; }
+	    &.ctemawp-email a:hover { color: #13aff0; border-color: #13aff0; }
+	    &.ctemawp-tiktok a:hover { color: #000000; border-color: #000000; }
+	    &.ctemawp-medium a:hover { color: #00ab6c; border-color: #00ab6c; }
+	    &.ctemawp-telegram a:hover { color: #0088cc; border-color: #0088cc;}
+		&.ctemawp-twitch a:hover { color: #702cee; border-color: #702cee; }
+		&.ctemawp-line a:hover { color: #00c300; border-color: #00c300; }
+		&.ctemawp-qq a:hover { color: #febf1b; border-color: #febf1b; }
+	}
+
+	.dark ul li a {
+    	position: relative;
+	    display: inline-block;
+	    font-size: 12px;
+	    background-color: $color-2;
+	    color: $color-1;
+	    line-height: 1;
+		padding: 1em;
+	    @include border-radius( 50% );
+	    vertical-align: middle;
+	    @include transition( all .3s ease-out );
+
+	    &:hover {
+	    	background-color: #000;
+	    	color: $color-1;
+	    }
+
+		.owp-icon use {
+			stroke: $color-1;
+		}
+	}
+}
