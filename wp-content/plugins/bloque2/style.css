@@ -1,0 +1,148 @@
+/* Contenedor principal del bloque en el editor */
+.pagina-container-edit {
+  position: relative;
+  width: 100%; /* Ajusta el ancho del bloque */
+  height: 600px; /* Ajusta la altura del bloque */
+  overflow: hidden; /* Contenido desbordante oculto */
+  border: 1px solid #000000; /* Añade un borde alrededor del bloque */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center; /* Eje horizontal */
+  align-items: center; /* Eje vertical */
+  background: #e7e7e7 !important;
+  border: 10px solid #000000; /* Añade un borde alrededor del bloque */
+}
+
+/* Contenido oscuro del bloque que incluye texto y enlace */
+.contenido-oscuro-edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+}
+
+/* Estilos del título del bloque */
+.texto-edit {
+  color: white !important;
+}
+
+/* Estilos del botón "Conocer Más" */
+.conocer-mas-btn-edit {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white !important;
+  border: 2px solid green;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+.conocer-mas-btn-edit:hover {
+  background-color: green !important;
+  color: white !important;
+}
+
+/* Botón para seleccionar la imagen */
+.button-edit {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid #396ddd;
+  color: #396ddd;
+}
+
+/* Estilos de la imagen de fondo */
+.imagen-fondo-edit {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagina-container-save {
+  position: relative;
+  overflow: hidden; /* Contenido desbordante oculto */
+  border: 10px solid #000000; /* Añade un borde alrededor del bloque */
+}
+
+.contenido-oscuro-save {
+  /* Default para el diseño de la imagen */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Estilos del título del bloque */
+.texto-save {
+  color: white;
+}
+
+/* Estilos del botón "Conocer Más" */
+.conocer-mas-btn-save {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid green;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Estilos del botón "Conocer Más" al pasar el ratón */
+.conocer-mas-btn-save:hover {
+  background-color: green !important;
+  color: white;
+}
+
+.imagen-fondo-save {
+  width: auto;
+  height: 100%;
+  object-fit: cover !important;
+  padding: 0px 0px 0px 0px !important;
+  display: block; /* Elimina posibles espacios en blanco debajo de la imagen */
+  margin: 0; /* Elimina márgenes predeterminados */
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 900px) {
+  .imagen-fondo-save {
+    border: none; /* Elimina el borde en dispositivos con ancho máximo de píxeles */
+  }
+  .texto-save {
+    font-size: 20px;
+  }
+
+  .conocer-mas-btn-save {
+    padding: 8px 16px; /* Espacio alrededor */
+    font-size: 12px;
+  }
+
+  .imagen-fondo-save {
+    width: auto;
+    height: 50%;
+    object-fit: cover !important;
+    padding: 0px 0px 0px 0px !important;
+    display: block; /* Elimina posibles espacios en blanco debajo de la imagen */
+    margin: 0; /* Elimina márgenes predeterminados */
+  }
+
+  .pagina-container-save {
+    border: none;
+  }
+}

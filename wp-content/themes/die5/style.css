@@ -39,3 +39,19 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   /*cambio  el contenido por buscar*/
   content: "<span>S</span>Buscar";
 }
+.primario {
+  color: #fff;
+  font-size: 19px;
+  font-weight: bold;
+}
+.preguntas {
+  color: #ffffff;
+  font-size: 14px;
+}
+.footer p {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
