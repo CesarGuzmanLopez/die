@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: imagen-personalizada 3.0
+Plugin Name: Imagen Personalizada
 Plugin URI: http://www.iztapalapa.uam.mx/
-Description: Publica en una página específica de wordpress una imagen sombreada con un boton que redirige 
+Description: Publica una imagen con diseño personalizado
 Author: Jorge Luis
-Version: 1.2
+Version: 2.0
 Author URI: dxdiag41@gmail.com
 */
 

@@ -1,0 +1,69 @@
+.degradado {
+    position: absolute;
+}
+
+.areaContenido {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.contenido {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.conocer-mas {
+    padding: 8px !important;
+    border: 2px solid green;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none !important;
+    width: 105px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 40px;
+}
+
+.conocer-mas:hover {
+    background-color: green !important;
+    color: white !important;
+}
+
+.button-edit {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid #396ddd;
+    color: #396ddd;
+}
+
+@media screen and (max-width: 900px) {
+    .bloque {
+        border: none !important;
+    }
+    .titulo {
+        font-size: 25px !important;
+    }
+    .contenido {
+        font-size: 14px !important;
+    }
+    .conocer-mas {
+        padding: 7px !important;
+        font-size: 14px !important;
+        width: 100px;
+        margin-top: 30px;
+    }
+    /*.bloque[style*="width: 50%"] {
+        border: none;
+    }*/
+}
