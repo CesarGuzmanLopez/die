@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "color": "#ffffff", "slug": "base", "name": "base 1" },
+        { "color": "#000000", "slug": "base2", "name": "base2" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFace": [
+            {
+              "fontFamily": "verdana-uam",
+              "fontStyle": "normal",
+              "src": ["file:./assets/fonts/Verdana/Verdana.ttf"]
+            },
+            {
+              "fontFamily": "verdana-uam",
+              "fontStyle": "italic",
+              "src": ["file:./assets/fonts/Verdana/Verdana-Italic.ttf"]
+            },
+            {
+              "fontFamily": "verdana-uam",
+              "fontWeight": "bold",
+              "src": ["file:./assets/fonts/Verdana/Verdana-Bold.ttf"]
+            },
+            {
+              "fontFamily": "verdana-uam",
+              "fontStyle": "italic",
+              "fontWeight": "bold",
+              "src": ["file:./assets/fonts/Verdana/Verdana-Bold-Italic.ttf"]
+            }
+          ],
+          "fontFamily": "verdana-uam",
+          "name": "Verdana UAM",
+          "slug": "verdana-uam"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "css": "style.css",
+    "blocks": {
+      "core/navigation": {
+        "color": {
+          "background": "#000000",
+          "text": "white"
+        }
+      }
+    }
+  },
+  "customTemplates": {},
+  "templateParts": {}
+}
