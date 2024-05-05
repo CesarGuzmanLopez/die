@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            /*
+            defino variables de medidas
+            */
+            --carousel-height: 300px;
+            --carousel-width: 600px;
+            --carousel-dots-height: 30px;
+        }
+
+        .slider-container {
+            width: var(--carousel-width);
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            height: var(--carousel-height);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            text-align: center;
+            height: var(--carousel-height);
+        }
+
+        .slide img {
+            position: inherit;
+            height: var(--carousel-height);
+            object-fit: cover;
+        }
+
+        .active-slide {
+            display: block;
+        }
+
+        .slider-dots {
+            text-align: center;
+            padding: 10px 0px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(12, 31, 31, .9);
+        }
+
+        .slider-dots-right {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(12, 31, 31, .9);
+            width: 30px;
+            height: 100%;
+        }
+
+        .slider-dots-left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(12, 31, 31, .9);
+            width: 30px;
+            height: 100%;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .slider-dots-right :first-child,
+        .slider-dots-left :first-child {
+
+            margin-top: calc(var(--carousel-height) / 2 - 15px);
+        }
+
+        .active-dot {
+            background-color: #717171;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slide active-slide">
+            <img src="https://picsum.photos/id/237/800/300" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/238/600/300" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/399/600/300" alt="Image 3">
+        </div>
+        <div class="slide ">
+            <img src="https://picsum.photos/id/400/600/300" alt="Image 4">
+        </div>
+
+        <div class="slider-dots-right">
+            <span class="dot active-dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.style.display = index === currentSlide ? 'block' : 'none';
+                dots[index].className = index === currentSlide ? 'dot active-dot' : 'dot';
+            });
+
+            currentSlide++;
+            if (currentSlide >= slides.length) currentSlide = 0;
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        setInterval(updateCarousel, 3000);
+        updateCarousel();
+    </script>
+
+</body>
+
+</html>

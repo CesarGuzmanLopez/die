@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        section {
+            background: #f4f4f4;
+            padding: 50px 0;
+        }
+
+        .container {
+            max-width: 1044px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: block;
+            text-align: left;
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        .carousel__slides {
+            position: relative;
+            z-index: 1;
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+            box-sizing: border-box;
+            display: flex;
+            transition: transform 300ms ease-out;
+        }
+
+        .carousel__slide {
+            position: relative;
+            display: block;
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            vertical-align: top;
+            box-sizing: border-box;
+            white-space: normal;
+        }
+
+        .carousel__slide figure {
+            margin: 0;
+            height: 450px;
+            display: flex;
+        }
+
+        .carousel__slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel__thumbnails {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0 -10px;
+            justify-content: center;
+        }
+
+        .carousel__thumbnails li {
+            flex: none;
+            margin: 0 10px;
+        }
+
+        .carousel__thumbnails img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .carousel__thumbnails label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="carousel" id="carousel">
+                <ul class="carousel__slides" id="slides"></ul>
+                <ul class="carousel__thumbnails" id="thumbnails"></ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var images = [
+            {src: "https://picsum.photos/id/1041/800/450", thumb: "https://picsum.photos/id/1041/150/150"},
+            {src: "https://picsum.photos/id/1043/800/450", thumb: "https://picsum.photos/id/1043/150/150"},
+            // Más imágenes aquí...
+        ];
+
+        function setupCarousel(images) {
+            var slides = document.getElementById('slides');
+            var thumbnails = document.getElementById('thumbnails');
+
+            images.forEach(function (image, index) {
+                var slide = document.createElement('li');
+                slide.className = 'carousel__slide';
+                slide.innerHTML = '<figure><img src="' + image.src + '" alt=""></figure>';
+                slides.appendChild(slide);
+
+                var thumbnailLi = document.createElement('li');
+                var thumbnail = document.createElement('label');
+                thumbnail.innerHTML = '<img src="' + image.thumb + '" alt="">';
+                thumbnail.onclick = function () {
+                    slides.style.transform = 'translateX(-' + index * 100 + '%)';
+                };
+                thumbnailLi.appendChild(thumbnail);
+                thumbnails.appendChild(thumbnailLi);
+            });
+        }
+
+        window.onload = function () {
+            setupCarousel(images);
+        };
+    </script>
+</body>
+
+</html>

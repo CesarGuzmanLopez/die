@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/gutenberg-slider"]
+	path = wp-content/plugins/gutenberg-slider
+	url = https://github.com/CesarGuzmanLopez/gutenberg-slider
