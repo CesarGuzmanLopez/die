@@ -1,40 +1,41 @@
-version: "3"
 networks:
   PT-wordpress-net:
     driver: bridge
+volumes:
+  mysql-data:
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0 # Especificar la versión para mayor control
     restart: always
     container_name: PT-wordpress-mysql
     tty: true
     ports:
       - "4208:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: jorge
-      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql-data:/var/lib/mysql
-
     networks:
       - PT-wordpress-net
-
-  server:
-    image: wordpress:latest
+    env_file:
+      - .env
+  wordpress:
+    image: wordpress:6.5 # Especificar la versión para mayor control
     restart: always
     container_name: PT-wordpress
     ports:
       - "4282:80"
     volumes:
-      - "./wp-content:/var/www/html/wp-content" # Solo montamos wp-content
+      - "./wp-content:/var/www/html/wp-content"
     environment:
-      WORDPRESS_DB_USER: jorge
-      WORDPRESS_DB_PASSWORD: 123456
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
       WORDPRESS_DB_HOST: PT-wordpress-mysql
-      WORDPRESS_DEBUG: true
+      WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_DEBUG', true);
         define('WP_DEBUG_LOG', true);
@@ -45,18 +46,21 @@ services:
       - mysql
     networks:
       - PT-wordpress-net
+    env_file:
+      - .env
+
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:5.1.0 # Especificar la versión para mayor control
     restart: always
     container_name: PT-phpmyadmin
     ports:
       - "4283:80"
     environment:
       PMA_HOST: PT-wordpress-mysql
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     depends_on:
       - mysql
     networks:
       - PT-wordpress-net
-volumes:
-  mysql-data:
+    env_file:
+      - .env

@@ -1,0 +1,273 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.slidercesar {
+  position: relative;
+}
+
+.slidercesar__window,
+.slidercesar__track {
+  height: 100%;
+}
+
+/* window */
+.slidercesar__window {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* track */
+.slidercesar__track {
+  width: 100%;
+  display: flex;
+  transition: all 0.7s ease-in-out;
+}
+
+.slidercesar__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slidercesar__buttons {
+  position: absolute;
+  z-index: 2;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  min-height: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.slide__button {
+  display: inline-block;
+}
+
+.slidercesar__navigation {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  align-items: center;
+}
+
+.slidercesar__button,
+.slidercesar__button__navigation {
+  background-color: transparent !important;
+  border: none;
+  cursor: pointer;
+}
+.slidercesar__button:focus,
+.slidercesar__button__navigation:focus {
+  outline-style: none;
+}
+
+.slidercesar__button__title {
+  margin: 0.5rem;
+  line-height: 1em;
+}
+
+/* navigation arrows */
+.slidercesar__button__navigation {
+  padding: 0;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.slidercesar__button__navigation svg {
+  transition: all 0.5s;
+  width: 58px;
+  height: 58px;
+}
+.slidercesar__button__navigation:hover {
+  opacity: 1;
+}
+
+/* slide buttons */
+.slidercesar__button {
+  margin: 0 0.1rem;
+  padding: 0;
+  opacity: 0.5;
+  transition: all 0.5s;
+  min-width: 2.5rem;
+  cursor: pointer;
+}
+.slidercesar__button span {
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  word-break: break-word;
+}
+.slidercesar__button svg {
+  transition: all 0.5s;
+  width: 1rem;
+  height: 1rem;
+}
+.slidercesar__button--active, .slidercesar__button:hover {
+  opacity: 1;
+}
+.slidercesar__button--active svg, .slidercesar__button:hover svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* slide */
+.slidercesar__slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.slidercesar__slide.is-vertical-center .slidercesar__slide_inner {
+  justify-content: center;
+}
+.slidercesar__slide.is-not-horizontal-center .slidercesar__slide_inner {
+  justify-content: initial;
+}
+.slidercesar__slide.is-vertical-bottom .slidercesar__slide_inner {
+  justify-content: flex-end;
+}
+
+/* fade slider */
+.slidercesar[data-transition-effect=fade] .slidercesar__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+}
+.slidercesar[data-transition-effect=fade] .slidercesar__slide.slidercesar__slide--active {
+  z-index: 1;
+  opacity: 1;
+}
+
+.slidercesar__slide__bg,
+.slidercesar__slide__overlay {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slidercesar__slide__bg > img,
+.slidercesar__slide__overlay > img {
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.slidercesar__slide_inner {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: calc(100% - 116px - 20px);
+  height: 81%;
+  top: 9%;
+  left: 68px;
+  padding-bottom: 32px;
+  overflow: hidden;
+}
+
+.inner-blocks {
+  overflow: auto;
+  width: 100%;
+}
+
+.slidercesar__slide__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* responsive */
+.visible--md,
+.visible--lg,
+.visible--xl {
+  display: none;
+}
+
+.visible--sm,
+.visible--md.visible--sm {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .visible--sm,
+  .visible--lg,
+  .visible--xl,
+  .visible--xl.visible--lg {
+    display: none;
+  }
+  .visible--md,
+  .visible--md.visible--lg {
+    display: block;
+  }
+  .slidercesar__slide_inner {
+    width: calc(100% - 136px - 30px);
+    height: 83%;
+    top: 8.5%;
+    left: 83px;
+  }
+  .slidercesar__buttons {
+    bottom: 2.5%;
+  }
+  .slidercesar__button__navigation svg {
+    width: 68px;
+    height: 68px;
+  }
+}
+@media (min-width: 1024px) {
+  .visible--sm,
+  .visible--md,
+  .visible--xl,
+  .visible--md.visible--sm {
+    display: none;
+  }
+  .visible--lg,
+  .visible--lg.visible--md,
+  .visible--xl.visible--lg {
+    display: block;
+  }
+  .slidercesar__slide_inner {
+    width: calc(100% - 140px - 30px);
+    height: 86%;
+    top: 6%;
+    left: 85px;
+  }
+  .slidercesar__buttons {
+    bottom: 2%;
+  }
+  .slidercesar__button__navigation svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (min-width: 1280px) {
+  .visible--sm,
+  .visible--md,
+  .visible--lg,
+  .visible--lg.visible--md {
+    display: none;
+  }
+  .visible--xl,
+  .visible--xl.visible--lg {
+    display: block;
+  }
+  .slidercesar__slide_inner {
+    width: calc(100% - 170px - 30px);
+    height: 90%;
+    top: 5%;
+    left: 100px;
+  }
+  .slidercesar__buttons {
+    bottom: 3%;
+  }
+  .slidercesar__button__navigation svg {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+/*# sourceMappingURL=style-slider-cesar.css.map*/
