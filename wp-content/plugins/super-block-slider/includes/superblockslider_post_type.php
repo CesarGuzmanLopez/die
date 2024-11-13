@@ -73,8 +73,9 @@ function superblockslider_shortcode($atts) {
         return 'Post not found.';
     }
 
-    // Return the post content
-    return $post->post_content;
+	// Process shortcodes and Gutenberg blocks in the post content
+    $content = apply_filters('the_content', $post->post_content);
+    return do_shortcode($content);
 }
 
 // Register superblockslider shortcode

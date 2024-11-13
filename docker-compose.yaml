@@ -1,13 +1,8 @@
-networks:
-  PT-wordpress-net:
-    driver: bridge
-volumes:
-  mysql-data:
 services:
   mysql:
-    image: mysql:8.4 # Especificar la versión para mayor control
+    image: mysql:latest
     restart: always
-    container_name: PT-wordpress-mysql
+    container_name: DIE-wordpress-mysql
     tty: true
     ports:
       - "4208:3306"
@@ -19,13 +14,13 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
-      - PT-wordpress-net
+      - DIE-wordpress-net
     env_file:
       - .env
   wordpress:
-    image: wordpress:6.5 # Especificar la versión para mayor control
+    image: wordpress:latest
     restart: always
-    container_name: PT-wordpress
+    container_name: DIE-wordpress
     ports:
       - "4282:80"
     volumes:
@@ -34,7 +29,7 @@ services:
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
-      WORDPRESS_DB_HOST: PT-wordpress-mysql
+      WORDPRESS_DB_HOST: DIE-wordpress-mysql
       WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_DEBUG', true);
@@ -45,22 +40,26 @@ services:
     depends_on:
       - mysql
     networks:
-      - PT-wordpress-net
+      - DIE-wordpress-net
     env_file:
       - .env
-
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:5.1.0 # Especificar la versión para mayor control
+    image: phpmyadmin/phpmyadmin:latest
     restart: always
-    container_name: PT-phpmyadmin
+    container_name: DIE-phpmyadmin
     ports:
       - "4283:80"
     environment:
-      PMA_HOST: PT-wordpress-mysql
+      PMA_HOST: DIE-wordpress-mysql
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     depends_on:
       - mysql
     networks:
-      - PT-wordpress-net
+      - DIE-wordpress-net
     env_file:
       - .env
+networks:
+  DIE-wordpress-net:
+    driver: bridge
+volumes:
+  mysql-data:

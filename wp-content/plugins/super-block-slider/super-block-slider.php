@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Super block slider
  * Description:     Lightweight, responsive, image & content slider for block and classic editor.
- * Version:         2.7.5
+ * Version:         2.7.7
  * Author:          mikemmx
  * Plugin URI:		https://superblockslider.com/
  * Author URI:  	https://wordpress.org/support/users/mikemmx/

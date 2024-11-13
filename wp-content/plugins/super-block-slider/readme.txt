@@ -4,7 +4,7 @@ Donate link:        https://www.paypal.com/paypalme/wpslider
 Tags:               image slider, slider, parallax, content slider, responsive slider
 Requires at least:  6.3
 Tested up to:       6.5
-Stable tag:         2.7.5
+Stable tag:         2.7.7
 Requires PHP:       7.0.0
 License:            GPL-2.0-or-later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,7 +28,7 @@ Customize each slide's background image and customize the visual presentation of
 
 = Content slider =
 
-Utilize any WordPress block as content in your sliders, giving you the freedom to showcase various types of media and information.
+Utilize any WordPress block in the content area, giving you full control over the slider layout and design.
 
 = Supports block & classic editor =
 
@@ -82,6 +82,15 @@ Choose from 20 transition animations to add dynamism and flair to your sliders.
 <a href="https://superblockslider.com/documentations/" target="_new">Documentations</a>
 
 == Changelog ==
+
+= 2.7.7 =
+
+* Fix editor styles: remove global editor styles
+* clean up invalid registerBlockType parameter
+
+= 2.7.6 =
+
+* Fix bug Gutenberg blocks not being process when embeding using shortcode.
 
 = 2.7.5 =
 
@@ -237,7 +246,9 @@ While in Page/Post edit mode simply add/search for **super block slider**.
 
 == Screenshots ==
 
-1. Slider editor screenshot
-2. Slider editor screenshot
-3. Slider editor screenshot
-4. Live results
+1. Editor screenshot 1
+2. Editor screenshot 2
+3. Editor screenshot 3
+4. Live results screenshot 4
+5. Editor screenshot 5
+6. Editor screenshot 6

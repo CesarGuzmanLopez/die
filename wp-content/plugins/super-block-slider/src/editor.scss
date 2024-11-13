@@ -114,9 +114,7 @@ button.components-button.has-icon.has-text.button-full-width {
 		opacity: 1;
 	}
 }
-.components-base-control {
-	width: 100%;
-}
+
 .components-panel__row {
 	.superblockslider__button.is-secondary {
 		margin-left: auto;
@@ -127,10 +125,6 @@ button.components-button.has-icon.has-text.button-full-width {
 	min-height: 100%;
 }
 
-.ssb-tabPanel .components-tab-panel__tabs-item {
-	padding: 3px 10px;
-}
-
 .superblockslider__slide__image {
 	display: none;
 } 
@@ -139,8 +133,4 @@ button.components-button.has-icon.has-text.button-full-width {
 .tablet .visible--md,
 .mobile .visible--sm {
 	display: block;
-}
-
-.components-unit-control-wrapper {
-	margin-bottom: 15px;
 }
