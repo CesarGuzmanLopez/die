@@ -1,0 +1,157 @@
+{
+  "days": [
+    {
+      "day": 7,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 8,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 9,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 10,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 11,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 12,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 13,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 14,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 15,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 16,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 17,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 18,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 19,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 20,
+      "month": 10,
+      "year": 2024,
+      "className": "PeriodoInterTrimestral"
+    },
+    { "day": 21, "month": 10, "year": 2024, "className": "inicioClases" },
+    { "day": 12, "month": 10, "year": 2024, "className": "diaInhabil" },
+    { "day": 1, "month": 11, "year": 2024, "className": "diaInhabil" },
+    { "day": 2, "month": 11, "year": 2024, "className": "diaInhabil" },
+    { "day": 20, "month": 11, "year": 2024, "className": "diaInhabil" },
+    { "day": 1, "month": 12, "year": 2024, "className": "diaInhabil" },
+    { "day": 25, "month": 12, "year": 2024, "className": "diaInhabil" },
+    { "day": 1, "month": 1, "year": 2025, "className": "diaInhabil" },
+    { "day": 17, "month": 1, "year": 2025, "className": "finClases" },
+    {
+      "day": 27,
+      "month": 1,
+      "year": 2025,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 28,
+      "month": 1,
+      "year": 2025,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 29,
+      "month": 1,
+      "year": 2025,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 30,
+      "month": 1,
+      "year": 2025,
+      "className": "PeriodoInterTrimestral"
+    },
+    {
+      "day": 31,
+      "month": 1,
+      "year": 2025,
+      "className": "PeriodoInterTrimestral"
+    }
+  ],
+  "weeks": [
+    { "startDay": 21, "startMonth": 10, "startYear": 2024, "name": "1" },
+    { "startDay": 28, "startMonth": 10, "startYear": 2024, "name": "2" },
+    { "startDay": 4, "startMonth": 11, "startYear": 2024, "name": "3" },
+    { "startDay": 11, "startMonth": 11, "startYear": 2024, "name": "4" },
+    { "startDay": 18, "startMonth": 11, "startYear": 2024, "name": "5" },
+    { "startDay": 25, "startMonth": 11, "startYear": 2024, "name": "6" },
+    { "startDay": 2, "startMonth": 12, "startYear": 2024, "name": "7" },
+    { "startDay": 9, "startMonth": 12, "startYear": 2024, "name": "8" },
+    { "startDay": 16, "startMonth": 12, "startYear": 2024, "name": "9" },
+    { "startDay": 23, "startMonth": 12, "startYear": 2024, "name": "-" },
+    { "startDay": 30, "startMonth": 12, "startYear": 2024, "name": "-" },
+    { "startDay": 6, "startMonth": 1, "startYear": 2025, "name": "10" },
+    { "startDay": 13, "startMonth": 1, "startYear": 2025, "name": "11" }
+  ],
+
+  "trimestres": [
+    {
+      "inicio": "2024-10-21",
+      "nombre": "Trimestre 24-O"
+    },
+    {
+      "inicio": "2025-01-10",
+      "nombre": "Trimestre 25-I"
+    },
+    {
+      "inicio": "2025-05-26",
+      "nombre": "Trimestre 25-P"
+    }
+  ]
+}
