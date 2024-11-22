@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http'; // Import HttpClientModule
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { isWithinInterval } from 'date-fns'; // Import date-fns functions
+import html2canvas from 'html2canvas';
 import { Observable } from 'rxjs';
-
 interface SymbolInfo {
   day: number;
   month: number;
@@ -45,6 +45,7 @@ interface CalendarData {
   styleUrls: ['./calendario.component.scss'],
 })
 export class CalendarioComponent {
+  @ViewChild('captureContent') captureContent!: ElementRef;
   days: CalendarDay[] = [];
   firstDayOfWeek: number = 0;
   titulo: string = 'Calendario';
@@ -180,7 +181,7 @@ export class CalendarioComponent {
           (info) =>
             info.startDay === day.date.getDate() &&
             info.startMonth === day.date.getMonth() + 1 &&
-            info.startYear === day.date.getFullYear(),
+            info.startYear === day.date.getFullYear()
         );
         if (week) {
           if (day.symbol) {
@@ -211,5 +212,19 @@ export class CalendarioComponent {
     } else {
       this.titulo = `${mesInicio} ${yearInicio} - ${mesFin} ${yearfinal} `;
     }
+  }
+  captureAndDownload() {
+    const content = this.captureContent.nativeElement;
+    html2canvas(content)
+      .then((canvas) => {
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'captura.png';
+        link.click();
+      })
+      .catch((error) => {
+        console.error('Error al capturar el contenido:', error);
+      });
   }
 }

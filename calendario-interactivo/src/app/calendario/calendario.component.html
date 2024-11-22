@@ -1,38 +1,44 @@
-<div class="trimestre"> {{ trimestreActual }}</div>
+<div id="captureContent" #captureContent>
+  <div class="trimestre"> {{ trimestreActual }}</div>
 
-<div class="background">
-  <div class="calendar-head">
-    <button class="prevWeek" (click)="prevWeek()">
-      < </button>
-        <div class="titulo">{{titulo}}</div>
-        <button class="nextWeek" (click)="nextWeek()"> > </button>
-  </div>
-  <div class="calendar">
-    <!-- Headers -->
-    <div class="calendar-header">SEM</div>
-    <div class="calendar-header">L</div>
-    <div class="calendar-header">M</div>
-    <div class="calendar-header">X</div>
-    <div class="calendar-header">J</div>
-    <div class="calendar-header">V</div>
-    <div class="calendar-header">S</div>
-    <div class="calendar-header">D</div>
-    <!-- Days -->
-    @for ( day of days; track day) {
-    <div [ngClass]="day.className" class="calendar-day">
-      {{ day.symbol?.text ?? day.dayNumber }}
+  <div class="background">
+    <div class="calendar-head">
+      <button class="prevWeek" (click)="prevWeek()">
+        < </button>
+          <div class="titulo">{{titulo}}</div>
+          <button class="nextWeek" (click)="nextWeek()"> > </button>
     </div>
-    }
+    <div class="calendar">
+      <!-- Headers -->
+      <div class="calendar-header">SEM</div>
+      <div class="calendar-header">L</div>
+      <div class="calendar-header">M</div>
+      <div class="calendar-header">X</div>
+      <div class="calendar-header">J</div>
+      <div class="calendar-header">V</div>
+      <div class="calendar-header">S</div>
+      <div class="calendar-header">D</div>
+      <!-- Days -->
+      @for ( day of days; track day) {
+      <div [ngClass]="day.className" class="calendar-day">
+        {{ day.symbol?.text ?? day.dayNumber }}
+      </div>
+      }
+    </div>
+
+  </div>
+  <div class="info">
+    <div>
+      <div class="label"> <span class="icon numSemana"></span>Número de semana</div>
+      <div class="label"> <span class="icon inicioClases"></span>Inicio de clases</div>
+      <div class="label"> <span class="icon SemanaActual"></span>Semana actual del trimestre</div>
+      <div class="label"> <span class="icon finClases"></span>Fin de clases</div>
+      <div class="label"> <span class="icon PeriodoInterTrimestral"></span>Periodo intertrimestral</div>
+      <div class="label"> <span class="icon diaInhabil"></span>Días inhábiles</div>
+    </div>
   </div>
 
 </div>
-<div class="info">
-  <div>
-    <div class="label"> <span class="icon numSemana"></span>Número de semana</div>
-    <div class="label"> <span class="icon inicioClases"></span>Inicio de clases</div>
-    <div class="label"> <span class="icon SemanaActual"></span>Semana actual del trimestre</div>
-    <div class="label"> <span class="icon finClases"></span>Fin de clases</div>
-    <div class="label"> <span class="icon PeriodoInterTrimestral"></span>Periodo intertrimestral</div>
-    <div class="label"> <span class="icon diaInhabil"></span>Días inhábiles</div>
-  </div>
+<div class="footer">
+  <button class="btn btn-primary" (click)="captureAndDownload()">Compartir</button>
 </div>
