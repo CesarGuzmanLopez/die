@@ -1,0 +1,70 @@
+.entry-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding-left: 4em;
+}
+
+.entry-content {
+  margin-top: 10px;
+}
+
+/* Estilos de la sección del servicio */
+.c-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.c-imagen-container {
+  flex: 0 0 300px;
+  margin-right: 20px;
+}
+
+.c-imagen {
+  max-width: 100%;
+  height: auto;
+}
+
+.c-contenido {
+  flex: 1 1 auto;
+}
+
+.c-meta-item {
+  margin-bottom: 10px;
+}
+
+.content-item {
+  margin-top: 5px;
+  margin-left: 2em;
+  white-space: pre-wrap;
+}
+
+/* Estilos de la sección del autor */
+.author-section {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.author-image {
+  float: left;
+  margin-right: 10px;
+}
+
+.author-info {
+  overflow: hidden;
+}
+
+.author-info p {
+  margin: 0;
+}
+
+.author-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.author-info a:hover {
+  text-decoration: underline;
+}

@@ -25,6 +25,7 @@ services:
       - "4282:80"
     volumes:
       - "./wp-content:/var/www/html/wp-content"
+      - "./PS:/var/www/html/wp-content/plugins/PS"
     environment:
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
