@@ -37,6 +37,10 @@ services:
         define('WP_DEBUG_DISPLAY', true);
         define('SCRIPT_DEBUG', true);
         define('SAVEQUERIES', true);
+        define('FORCE_SSL_ADMIN', false); // Desactiva la redirección SSL en el panel de administración
+        define('WP_HOME', 'http://localhost:4282'); // Establece el dominio principal
+        define('WP_SITEURL', 'http://localhost:4282'); // Establece la URL del sitio
+
     depends_on:
       - mysql
     networks:
