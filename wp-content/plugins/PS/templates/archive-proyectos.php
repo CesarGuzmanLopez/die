@@ -2,11 +2,11 @@
 /**
  * Template for displaying all proyectos.
  */
+    wp_head();
+    
 ?>
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
-
 <!-- wp:group {"tagName":"main"} -->
-
 <main id="primary" class="site-main">
     <header class="page-header">
         <h1 class="page-title"><?php _e('Proyectos Terminales', 'ps-plugin'); ?></h1>
@@ -32,3 +32,6 @@
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
+<?php
+    wp_footer();
+?>

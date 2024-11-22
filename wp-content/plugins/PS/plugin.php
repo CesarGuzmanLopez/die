@@ -25,6 +25,7 @@ add_filter('page_row_actions', 'ps_add_unpublish_delete_actions', 10, 2);
 
 function ps_enqueue_styles() {
     wp_enqueue_style('ps-plugin-styles', plugins_url('css/styles.css', __FILE__));
+    wp_enqueue_style('ps-plugin-custom-styles', plugins_url('templates/style.css', __FILE__));
 }
 
 function ps_register_custom_post_types() {
@@ -246,7 +247,7 @@ function ps_save_meta_boxes($post_id) {
 }
 
 function ps_add_custom_capabilities() {
-    $roles = ['profesor', 'profesor_1','administrator'];
+    $roles = ['Responsable', 'profesor','administrator'];
     foreach ($roles as $role_name) {
         $role = get_role($role_name);
         if ($role) {
@@ -280,7 +281,7 @@ function ps_restrict_post_status($data, $postarr) {
 }
 
 function ps_restrict_editing_published_posts($allcaps, $cap, $args, $user) {
-    if (in_array('profesor', $user->roles) || in_array('profesor_1', $user->roles)) {
+    if (in_array('Responsable', $user->roles) || in_array('profesor_1', $user->roles)) {
         if (isset($args[2]) && get_post_status($args[2]) === 'publish') {
             if (in_array($args[0], ['edit_post'])) {
                 $allcaps[$cap[0]] = false;
@@ -294,7 +295,7 @@ function ps_restrict_republishing($allcaps, $cap, $args, $user) {
     if (in_array('administrator', $user->roles)) {
         return $allcaps; // Admin can do everything
     }
-    if (in_array('profesor', $user->roles) || in_array('profesor_1', $user->roles)) {
+    if (in_array('Responsable', $user->roles) || in_array('profesor_1', $user->roles)) {
         if (isset($args[2])) {
             $post = get_post($args[2]);
             if ($post->post_status === 'publish' && in_array($args[0], ['publish_post'])) {
@@ -309,7 +310,7 @@ function ps_allow_unpublish_delete($allcaps, $cap, $args, $user) {
     if (in_array('administrator', $user->roles)) {
         return $allcaps; // Admin can do everything
     }
-    if (in_array('profesor', $user->roles) || in_array('profesor_1', $user->roles)) {
+    if (in_array('Responsable', $user->roles) || in_array('profesor_1', $user->roles)) {
         if (isset($args[2])) {
             $post = get_post($args[2]);
             if ($post->post_author == $user->ID && in_array($args[0], ['delete_post', 'edit_post'])) {
