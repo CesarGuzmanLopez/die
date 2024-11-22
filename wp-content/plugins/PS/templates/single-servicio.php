@@ -9,6 +9,7 @@ $habilidades = get_post_meta(get_the_ID(), 'habilidades_servicio', true);
 $contacto = get_post_meta(get_the_ID(), 'datos_contacto_servicio', true);
 $imagen = get_post_meta(get_the_ID(), 'imagen_servicio', true);
 $ubicacion = get_post_meta(get_the_ID(), 'ubicacion_servicio', true);
+
 ?>
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 

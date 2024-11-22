@@ -8,10 +8,9 @@ $descripcion = get_post_meta(get_the_ID(), 'descripcion_proyecto', true);
 $habilidades = get_post_meta(get_the_ID(), 'habilidades_proyecto', true);
 $contacto = get_post_meta(get_the_ID(), 'datos_contacto_proyecto', true);
 $imagen = get_post_meta(get_the_ID(), 'imagen_proyecto', true);
-?>
-<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main"} -->
+get_header();
+?>
 <main id="primary" class="site-main">
     <?php
     while (have_posts()) :
@@ -64,6 +63,6 @@ $imagen = get_post_meta(get_the_ID(), 'imagen_proyecto', true);
         </div>
     </div>
 </main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
+<?php
+get_footer();
+?>
